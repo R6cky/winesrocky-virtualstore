@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { CartCard } from "../pages/cartList/cartCard";
 import { Dashboard } from "../pages/dashboard";
 import { Login } from "../pages/login";
 import { Register } from "../pages/register";
@@ -10,6 +11,7 @@ export const RoutesMain: any = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/cart" element={<CartCard />} />
     </Routes>
   );
 };

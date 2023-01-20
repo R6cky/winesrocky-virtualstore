@@ -3,18 +3,28 @@ import { Header } from "../../components/header";
 import { WineList } from "../../components/wineList";
 import { StyledDashboard } from "./style";
 import { ProductProvider } from "../../contexts/contextproducts";
+import { ModalContext } from "../../contexts/contextmodals";
+import { useContext } from "react";
+import { ModalViewProducts } from "../../components/modais/viewProducts";
 
 export const Dashboard = () => {
+  const { modalViewProducts } = useContext(ModalContext);
+
   return (
-    <div>
-      <Header />
-      <StyledDashboard />
+    <StyledDashboard>
+      {modalViewProducts ? (
+        <ModalViewProducts />
+      ) : (
+        <>
+          <Header />
 
-      <ProductProvider>
-        <WineList />
-      </ProductProvider>
+          <ProductProvider>
+            <WineList />
+          </ProductProvider>
 
-      <Footer />
-    </div>
+          <Footer />
+        </>
+      )}
+    </StyledDashboard>
   );
 };

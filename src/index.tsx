@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { RegisterProvider } from "./contexts/contextregister";
 import { LoginProvider } from "./contexts/contextlogin";
+import { ModalProvider } from "./contexts/contextmodals";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,9 @@ root.render(
     <BrowserRouter>
       <RegisterProvider>
         <LoginProvider>
-          <App />
+          <ModalProvider>
+            <App />
+          </ModalProvider>
         </LoginProvider>
       </RegisterProvider>
     </BrowserRouter>
