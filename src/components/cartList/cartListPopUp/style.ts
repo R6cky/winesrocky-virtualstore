@@ -9,7 +9,7 @@ export const StyledCartListPopUp = styled.div`
   flex-direction: column;
   gap: 10px;
   position: absolute;
-  top: 0px;
+  top: 100px;
   right: 100px;
 
   .pop-up-list {

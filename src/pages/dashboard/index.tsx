@@ -6,6 +6,7 @@ import { ModalContext } from "../../contexts/contextmodals";
 import { useContext } from "react";
 import { ModalViewProducts } from "../../components/modais/viewProducts";
 import { ImageSlide } from "../../components/imageSlide";
+import { CartListPopUp } from "../../components/cartList/cartListPopUp";
 
 export const Dashboard = () => {
   const { modalViewProducts } = useContext(ModalContext);
@@ -16,6 +17,7 @@ export const Dashboard = () => {
       <ImageSlide />
       <WineList />
       {modalViewProducts && <ModalViewProducts />}
+      <CartListPopUp />
       <Footer />
     </StyledDashboard>
   );
