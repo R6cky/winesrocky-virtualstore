@@ -1,9 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { ProductContext } from "./contextproducts";
 
 export const ModalContext = createContext({} as any);
 
 export const ModalProvider = ({ children }: any) => {
   const [modalViewProducts, setModalViewProducts] = useState(false);
+  const { viewProduct } = useContext(ProductContext);
 
   const controlModalViewProducts = (id: any) => {
     if (modalViewProducts) {
@@ -11,6 +13,8 @@ export const ModalProvider = ({ children }: any) => {
     } else {
       setModalViewProducts(true);
     }
+
+    viewProduct(id);
   };
 
   return (

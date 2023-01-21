@@ -1,10 +1,11 @@
 import { StyledWineCard } from "./style";
 import { useContext } from "react";
 import { ModalContext } from "../../../contexts/contextmodals";
+import { CartContext } from "../../../contexts/contextcart";
 
-export const WineCard = ({ elem }: any) => {
-  const { modalViewProducts, setModalViewProducts, controlModalViewProducts } =
-    useContext(ModalContext);
+export const WineCard = ({ elem, productWines }: any) => {
+  const { controlModalViewProducts } = useContext(ModalContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <StyledWineCard className="wine-card">
@@ -17,9 +18,10 @@ export const WineCard = ({ elem }: any) => {
       <div className="description">
         <p>{elem.description}</p>
       </div>
-      <button onClick={() => controlModalViewProducts()}>
-        Adicionar ao carrinho
+      <button onClick={() => controlModalViewProducts(elem.id)}>
+        Ver produto
       </button>
+      <button onClick={() => addToCart(elem.id)}>Adicionar ao carrinho</button>
     </StyledWineCard>
   );
 };

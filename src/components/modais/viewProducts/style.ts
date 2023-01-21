@@ -3,12 +3,17 @@ import styled from "styled-components";
 export const StyledModalViewProducts = styled.div`
   width: 100vw;
   max-width: 100%;
-  height: 100vh;
+  height: 100%;
   border: solid red;
-  background: var(--background-modal);
+  background: #00000080;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   .modal-view-products {
     width: 46.875rem;
@@ -19,6 +24,7 @@ export const StyledModalViewProducts = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background: var(--color-wine);
 
     .header-modal {
       width: 100%;
@@ -30,6 +36,7 @@ export const StyledModalViewProducts = styled.div`
 
       .close-btn {
         cursor: pointer;
+        background: var(--color-gray0);
       }
     }
   }
@@ -41,5 +48,23 @@ export const StyledModalViewProducts = styled.div`
     justify-content: space-around;
     align-items: center;
     border: solid red;
+
+    .data-left {
+      border: solid white;
+      width: 20rem;
+      height: 30rem;
+      border-radius: 8px;
+    }
+
+    .data-right {
+      border: solid white;
+      width: 20rem;
+      height: 30rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 `;

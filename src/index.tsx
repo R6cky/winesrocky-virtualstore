@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { RegisterProvider } from "./contexts/contextregister";
 import { LoginProvider } from "./contexts/contextlogin";
 import { ModalProvider } from "./contexts/contextmodals";
+import { ProductProvider } from "./contexts/contextproducts";
+import { CartProvider } from "./contexts/contextcart";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,9 +17,13 @@ root.render(
     <BrowserRouter>
       <RegisterProvider>
         <LoginProvider>
-          <ModalProvider>
-            <App />
-          </ModalProvider>
+          <ProductProvider>
+            <CartProvider>
+              <ModalProvider>
+                <App />
+              </ModalProvider>
+            </CartProvider>
+          </ProductProvider>
         </LoginProvider>
       </RegisterProvider>
     </BrowserRouter>
