@@ -11,6 +11,7 @@ export const StyledCartListPopUp = styled.div`
   position: absolute;
   top: 100px;
   right: 100px;
+  display: none;
 
   .pop-up-list {
     display: flex;

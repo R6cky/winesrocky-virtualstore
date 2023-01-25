@@ -8,6 +8,7 @@ import { Register } from "../pages/register";
 export const RoutesMain: any = () => {
   return (
     <Routes>
+      <Route path="/" element={<Dashboard />} />
       <Route path="/home" element={<CartListPopUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

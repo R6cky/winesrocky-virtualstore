@@ -10,7 +10,7 @@ export const StyledModalViewProducts = styled.div`
   justify-content: center;
   align-items: center;
   border: solid;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
@@ -25,6 +25,19 @@ export const StyledModalViewProducts = styled.div`
     flex-direction: column;
     align-items: flex-end;
     background: var(--color-wine);
+    animation: myAnim 1s ease 0s 1 normal forwards;
+
+    @keyframes myAnim {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .header-modal {
       width: 100%;
@@ -51,9 +64,18 @@ export const StyledModalViewProducts = styled.div`
 
     .data-left {
       border: solid white;
-      width: 20rem;
+      width: 23rem;
       height: 30rem;
       border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 90%;
+        height: 80%;
+        border-radius: 8px;
+      }
     }
 
     .data-right {

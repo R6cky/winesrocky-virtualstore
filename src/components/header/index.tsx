@@ -17,7 +17,7 @@ export const Header = () => {
           <img src="" alt="inicio" />
         </div>
         <div className="icon-exit">
-          <img src="" alt="exit" />
+          <img src="" alt="exit" onClick={() => navigate("/login")} />
         </div>
       </div>
     </StyledHeader>
